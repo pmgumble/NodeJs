@@ -9,6 +9,10 @@ var passport = require('passport');
 var authenticate = require('./authenticate');
 var config = require('./config');
 
+
+var cors = require('cors'); 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var dishRouter = require('./routes/dishRouter');
@@ -53,7 +57,7 @@ app.use(passport.initialize());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use(cors());
 // function auth (req, res, next) {
 //   console.log(req.user);
 
